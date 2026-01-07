@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>משחק קופסה בסגנון מונופול</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <h1>המסע בעיר</h1>
+        <p>
+          זרקו קוביות אמיתיות, הזינו את התוצאה כאן, והמשחק יזוז לפי המספרים שלכם.
+        </p>
+      </div>
+      <div class="status-card">
+        <p class="status-label">מיקום נוכחי</p>
+        <p class="status-value" id="positionLabel">0</p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="board" aria-label="לוח המשחק">
+        <div class="board-grid" id="boardGrid"></div>
+      </section>
+
+      <section class="panel" aria-label="בקרת קוביות">
+        <h2>כניסה מהירה של קוביות</h2>
+        <p>
+          הכניסו כל קובייה בנפרד או הזינו סכום כולל. בחרו מה שנוח לכם בזמן אמת.
+        </p>
+
+        <div class="dice-inputs">
+          <div class="dice">
+            <label for="dieOne">קובייה ראשונה</label>
+            <div class="dice-field">
+              <input id="dieOne" type="number" min="1" max="6" value="1" />
+              <div class="dice-buttons" data-target="dieOne"></div>
+            </div>
+          </div>
+          <div class="dice">
+            <label for="dieTwo">קובייה שנייה</label>
+            <div class="dice-field">
+              <input id="dieTwo" type="number" min="1" max="6" value="1" />
+              <div class="dice-buttons" data-target="dieTwo"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="total-input">
+          <label for="totalMove">או הזנת סכום כולל</label>
+          <div class="total-row">
+            <input id="totalMove" type="number" min="2" max="12" placeholder="סכום" />
+            <button id="useTotal" type="button">השתמש בסכום</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="moveButton" type="button">זוז קדימה</button>
+          <button id="resetButton" type="button" class="ghost">התחל מחדש</button>
+        </div>
+
+        <div class="log" aria-live="polite" aria-atomic="true">
+          <h3>יומן מהלכים</h3>
+          <ul id="moveLog"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
