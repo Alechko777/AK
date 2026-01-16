@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>מסע בין כוכבים - משחק אינטרקטיבי</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game">
+      <header class="game__header">
+        <h1>מסע בין כוכבים</h1>
+        <p>עזרו לנווט את החללית דרך משימות קצרות. בחרו תשובה כדי לצבור אנרגיה.</p>
+      </header>
+
+      <section class="status">
+        <div class="status__item">
+          <span class="status__label">אנרגיה</span>
+          <div class="status__bar">
+            <div class="status__bar-fill" id="energyBar"></div>
+          </div>
+        </div>
+        <div class="status__item">
+          <span class="status__label">מסע</span>
+          <span class="status__value" id="progressValue">1/5</span>
+        </div>
+        <button class="btn btn--ghost" id="resetButton">התחלה מחדש</button>
+      </section>
+
+      <section class="card" id="sceneCard">
+        <h2 id="sceneTitle">טוען משימה...</h2>
+        <p id="sceneText"></p>
+        <div class="choices" id="choices"></div>
+      </section>
+
+      <section class="log">
+        <h3>יומן מסע</h3>
+        <ul id="logList"></ul>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
